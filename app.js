@@ -6,12 +6,18 @@ const connectDB = require('./database/connect')
 
 const app = express()
 
+app.use(express.json())
+
 const handelError = require('./middleware/handel-errors')
 const notFound = require('./middleware/notfound')
 
 
+
 // routes
 
+const productRouter = require('./routes/products')
+
+app.use('/api/v1/product', productRouter)
 
 
 // middleware
