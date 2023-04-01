@@ -8,3 +8,6 @@ class BadRequest extends CustomError{
     }
 
 }
+
+
+module.exports = BadRequest
