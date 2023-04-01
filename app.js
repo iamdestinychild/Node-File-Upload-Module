@@ -2,11 +2,16 @@ const express = require('express')
 require('dotenv').config()
 require('express-async-errors')
 
-const connectDB = require('./database/connect')
+const fileUpload = require('express-fileupload')
 
 const app = express()
 
 app.use(express.json())
+
+app.use(fileUpload())
+
+const connectDB = require('./database/connect')
+
 
 const handelError = require('./middleware/handel-errors')
 const notFound = require('./middleware/notfound')

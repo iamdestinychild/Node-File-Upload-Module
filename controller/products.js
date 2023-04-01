@@ -1,10 +1,10 @@
 const product = require('../model/products')
 
-const getProduct = (req, res) => {
+const getProduct = async (req, res) => {
     res.send('get product')
 }
 
-const createProduct = (req, res) => {
+const createProduct = async (req, res) => {
     res.send('create product')
 }
 

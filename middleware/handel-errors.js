@@ -7,7 +7,7 @@ const handelError = (err, req, res, next) => {
         statuseCode: err.statuseCode || StatusCodes.INTERNAL_SERVER_ERROR
     }
 
-    res.statuseCode(customError.statuseCode).json({msg: customError.msg})
+    res.status(customError.statuseCode).json({msg: customError.msg})
 
 }
 
