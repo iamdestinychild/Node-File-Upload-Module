@@ -11,5 +11,5 @@ const handelError = (err, req, res, next) => {
 
 }
 
-
+module.exports = handelError
 
