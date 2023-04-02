@@ -2,16 +2,22 @@ const express = require('express')
 require('dotenv').config()
 require('express-async-errors')
 
+const cloudinary = require('cloudinary').v2
 const fileUpload = require('express-fileupload')
 
 const app = express()
 
-
-app.use(express.static('./public'))
+cloudinary.config({
+    cloud_name: process.env.cloud_name,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+})
 
 app.use(express.json())
 
-app.use(fileUpload())
+app.use(fileUpload({
+    useTempFiles: true,
+}))
 
 const connectDB = require('./database/connect')
 
